@@ -1,0 +1,39 @@
+{
+  "name": "@zenox/config",
+  "version": "0.1.0",
+  "description": "Config engine for Zenox Framework",
+  "keywords": [
+    "zenox",
+    "config"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "typings": "src/index",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "npm run build && npm run lint && mocha",
+    "lint": "tslint **/*.ts -e '**/*.d.ts' -t verbose",
+    "prepublish": "npm run build"
+  },
+  "author": {
+    "name": "Albert Cuartiella",
+    "email": "cuarti1992@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuarti/zenox-config.git"
+  },
+  "homepage": "https://github.com/cuarti/zenox-config#readme",
+  "bugs": {
+    "url": "https://github.com/cuarti/zenox-config/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.16",
+    "mocha": "^3.4.2",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.2"
+  }
+}

@@ -5,13 +5,21 @@ import {load} from './load';
 export interface Config {
 
 	/**
-	 * Get config from namespace
+	 * Get config from namespace if exists
+	 *
+	 * @param	namespace		Namespace config
+	 * @return					Config value
+	 */
+	get<T>(namespace: string): T | undefined;
+
+	/**
+	 * Get config from namespace if exists or default value otherwise
 	 *
 	 * @param	namespace		Namespace config
 	 * @param	defaultValue	Default value for config
 	 * @return					Config value
 	 */
-	get<T>(namespace: string, defaultValue?: T): T;
+	get<T>(namespace: string, defaultValue: T): T;
 
 	/**
 	 * Get all configurations

@@ -1,47 +1,27 @@
 
+import {load} from './load';
 
-/**
- * Config data
- *
- * @todo    Abstract it in @agama/types as AssignableObject<T = any> for assign new properties to object
- */
-export interface ConfigData {
-    [key: string]: any;
-}
 
-/**
- * Config set
- */
-export class Config {
+export interface Config {
 
-    private data: ConfigData;
+	/**
+	 * Get config from namespace
+	 *
+	 * @param	namespace		Namespace config
+	 * @param	defaultValue	Default value for config
+	 * @return					Config value
+	 */
+	get<T>(namespace: string, defaultValue?: T): T;
 
-    /**
-     * Constructor method
-     *
-     * @param   data    Config data
-     */
-    public constructor(data: ConfigData) {
-        this.data = data;
-    }
-
-    /**
-     * Get config value by namespace
-     *
-     * @param   namespace   Config namespace
-     * @returns             Config value
-     */
-    public get<T>(namespace: string): T {
-        return namespace.split('.').reduce((r, k) => r[k], this.data);
-    }
-
-    /**
-     * Get all config values
-     *
-     * @returns {ConfigData}
-     */
-    public getAll(): ConfigData {
-        return this.data;
-    }
+	/**
+	 * Get all configurations
+	 *
+	 * @return	All configuration
+	 */
+	getAll<T extends object = object>(): T;
 
 }
+
+const {ZENOX_CONFIG_PATH, NODE_ENV} = process.env;
+
+export const Config = load(ZENOX_CONFIG_PATH, NODE_ENV);

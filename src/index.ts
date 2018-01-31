@@ -1,4 +1,4 @@
 
 
 export * from './Config';
-export * from './ConfigBuilder';
+export * from './load';

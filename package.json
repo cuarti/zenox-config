@@ -11,10 +11,13 @@
   "main": "src/index.js",
   "typings": "src/index",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
-    "test": "npm run build && npm run lint && mocha",
-    "lint": "tslint **/*.ts -e '**/*.d.ts' -t verbose",
+    "build": "npm run build:ts",
+    "build:ts": "tsc",
+    "dev": "npx run dev:ts",
+    "dev:ts": "tsc --watch",
+    "test": "npm run test:lint && npm run test:jest",
+    "test:lint": "tslint **/*.ts -e '**/*.d.ts' -t verbose",
+    "test:jest": "jest",
     "prepublish": "npm run build"
   },
   "author": {
@@ -38,6 +41,20 @@
     "ts-jest": "^22.0.2",
     "ts-node": "^4.1.0",
     "tslint": "^5.9.1",
-    "typescript": "^2.6.2"
+    "typescript": "^2.7.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/test/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }

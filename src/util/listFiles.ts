@@ -9,5 +9,12 @@ import {readdirSync} from 'fs';
  * @return			YAML files
  */
 export function listFiles(path: string): string[] {
-	return readdirSync(path).filter(f => f.endsWith('.yml'));
+
+	try {
+		return readdirSync(path).filter(f => f.endsWith('.yml'));
+
+	} catch(err) {
+		return [];
+	}
+
 }

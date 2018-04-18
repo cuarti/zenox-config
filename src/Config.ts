@@ -32,4 +32,4 @@ export interface Config {
 
 const {ZENOX_CONFIG_PATH, NODE_ENV} = process.env;
 
-export const Config = load(ZENOX_CONFIG_PATH || 'config', NODE_ENV);
+export const Config = load(ZENOX_CONFIG_PATH || 'config', NODE_ENV || 'development');

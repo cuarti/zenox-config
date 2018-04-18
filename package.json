@@ -1,6 +1,6 @@
 {
   "name": "@zenox/config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Config engine for Zenox Framework",
   "keywords": [
     "zenox",
@@ -32,7 +32,9 @@
   "bugs": {
     "url": "https://github.com/cuarti/zenox-config/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "js-yaml": "^3.10.0"
+  },
   "devDependencies": {
     "@types/jest": "^22.2.3",
     "@types/js-yaml": "^3.11.1",

@@ -1,7 +1,7 @@
 
 import {join} from 'path';
 
-import {load} from '..';
+import {load} from '../..';
 
 
 test('load', () => {

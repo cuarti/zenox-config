@@ -1,5 +1,5 @@
 
-import {merge} from '../../src/util';
+import {merge} from '../../../src/util';
 
 
 test('merge', () => {

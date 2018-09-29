@@ -1,5 +1,5 @@
 
-import {MemoryConfig} from '..';
+import {MemoryConfig} from '../..';
 
 
 const config = new MemoryConfig({

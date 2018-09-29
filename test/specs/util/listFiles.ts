@@ -1,7 +1,7 @@
 
 import {join} from 'path';
 
-import {listFiles} from '../../src/util';
+import {listFiles} from '../../../src/util';
 
 
 test('listFiles', () => {

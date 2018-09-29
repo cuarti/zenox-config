@@ -1,6 +1,6 @@
 
 import {join} from 'path';
-import {loadDirectory} from '../../src/util';
+import {loadDirectory} from '../../../src/util';
 
 
 test('loadDirectory', () => {

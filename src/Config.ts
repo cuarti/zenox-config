@@ -1,5 +1,7 @@
 
-import {load} from './load';
+import {join} from 'path';
+
+import {ConfigService} from './ConfigService';
 
 
 export interface Config {
@@ -30,6 +32,9 @@ export interface Config {
 
 }
 
-const {ZENOX_CONFIG_PATH, NODE_ENV} = process.env;
+const {ZENOX_PROJECT_DIR, ZENOX_CONFIG_DIR, NODE_ENV} = process.env;
 
-export const Config = load(ZENOX_CONFIG_PATH || 'config', NODE_ENV || 'development');
+const path = ZENOX_CONFIG_DIR || join(ZENOX_PROJECT_DIR || process.cwd(), 'config');
+const env = NODE_ENV || 'development';
+
+export const Config: Config = ConfigService.fromYaml(path, env);

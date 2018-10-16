@@ -1,6 +1,6 @@
 {
   "name": "@zenox/config",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Config engine for Zenox Framework",
   "keywords": [
     "zenox",
